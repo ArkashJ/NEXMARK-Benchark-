@@ -1,0 +1,53 @@
+# FLINK_ROOT=$(git rev-parse --show-toplevel)
+# echo "FLINK_ROOT: $FLINK_ROOT"
+
+# Set bin variable and source config.sh
+# bin=$(dirname "$0")
+# bin=$(cd "$bin" && pwd) || { echo "cd $bin failed"; exit 1; }
+# source "$bin/config.sh"
+# echo "bin: $bin"
+
+# cd "$FLINK_ROOT"
+
+# Build jar
+# cp pom_template_all.xml "$FLINK_ROOT"/flink-examples/flink-examples-streaming/pom.xml
+# cd "$FLINK_ROOT" && mvn spotless:apply && mvn clean package -DskipTests -Dfast -T 1C -Drat.skip=true
+
+# Create target directory if it doesn't exist
+# TARGET_DIR="$bin/$TARGET_DIR"
+# if [ ! -d  "$TARGET_DIR" ]; then
+#   mkdir "$TARGET_DIR"
+# else
+#   echo "Directory already exists"
+# fi
+
+
+#/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target
+# Copy jar files to target directory
+cp "/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target/Query3-jar-with-dependencies.jar" "/home/flink/Flink/flink-1.18.1/experiment-tools/target/$QUERY3.jar"
+cp "/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target/Query5-jar-with-dependencies.jar" "/home/flink/Flink/flink-1.18.1/experiment-tools/target/$QUERY5.jar"
+cp "/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target/Query7-jar-with-dependencies.jar" "/home/flink/Flink/flink-1.18.1/experiment-tools/target/$QUERY7.jar"
+cp "/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target/Query8-jar-with-dependencies.jar" "/home/flink/Flink/flink-1.18.1/experiment-tools/target/$QUERY8.jar"
+
+cp "/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target/KafkaSourceBid-jar-with-dependencies.jar" "/home/flink/Flink/flink-1.18.1/experiment-tools/target/$BID_SOURCE.jar"
+cp "/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target/KafkaSourceAuction-jar-with-dependencies.jar" "/home/flink/Flink/flink-1.18.1/experiment-tools/target/$AUCTION_SOURCE.jar"
+cp "/home/flink/Flink/cloud-provider-benchmarks/nexmark-kafka/target/KafkaSourcePerson-jar-with-dependencies.jar" "/home/flink/Flink/flink-1.18.1/experiment-tools/target/$PERSON_SOURCE.jar"
+
+
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query1-jar-with-dependencies.jar "$TARGET_DIR/$QUERY1.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query3-jar-with-dependencies.jar "$TARGET_DIR/$QUERY3.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query4-jar-with-dependencies.jar "$TARGET_DIR/$QUERY4.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query5-jar-with-dependencies.jar "$TARGET_DIR/$QUERY5.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query5mod-jar-with-dependencies.jar "$TARGET_DIR/$QUERY5MOD.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query6-jar-with-dependencies.jar "$TARGET_DIR/$QUERY6.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query7-jar-with-dependencies.jar "$TARGET_DIR/$QUERY7.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query8-jar-with-dependencies.jar "$TARGET_DIR/$QUERY8.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query8mod-jar-with-dependencies.jar "$TARGET_DIR/$QUERY8MOD.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/Query11-jar-with-dependencies.jar "$TARGET_DIR/$QUERY11.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/KafkaSourceBid-jar-with-dependencies.jar "$TARGET_DIR/$BID_SOURCE.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/KafkaSourceAuction-jar-with-dependencies.jar "$TARGET_DIR/$AUCTION_SOURCE.jar"
+# cp "$FLINK_ROOT"/flink-examples/flink-examples-streaming/target/KafkaSourcePerson-jar-with-dependencies.jar "$TARGET_DIR/$PERSON_SOURCE.jar"
+
+# Add library packages
+# cp "$FLINK_ROOT"/libraries/commons-cli-1.5.0.jar  "$FLINK_ROOT"/build-target/lib/
+# cp "$FLINK_ROOT"/libraries/flink-shaded-hadoop-3-uber-3.1.1.7.2.9.0-173-9.0.jar  "$FLINK_ROOT"/build-target/lib/
